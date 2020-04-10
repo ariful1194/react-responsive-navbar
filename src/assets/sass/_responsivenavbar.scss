@@ -1,0 +1,77 @@
+.navbar_container {
+  display: flex;
+  justify-content: space-between;
+  background-color: #333;
+  padding: 0 5%;
+  position: relative;
+  @include breakpoint(tablet) {
+    flex-direction: column;
+  }
+
+  .logo_container {
+    display: flex;
+    .logo {
+      width: 50px;
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+      @include breakpoint(tablet) {
+        padding: 5px 0;
+        width: 100%;
+      }
+      img {
+        max-width: 50px;
+      }
+      .bars {
+        color: blue;
+        display: none;
+        @include breakpoint(tablet) {
+          display: block;
+          margin-left: auto;
+        }
+      }
+    }
+  }
+  nav {
+    @include breakpoint(tablet) {
+      position: absolute;
+      width: 100%;
+      bottom: 100%;
+      left: 0;
+      background: #333;
+
+      &.show {
+        top: 100%;
+        bottom: initial;
+        padding: 0 5%;
+      }
+    }
+  }
+  .nav_ul {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    @include breakpoint(tablet) {
+      flex-direction: column;
+      padding: 0px 0px 15px;
+    }
+    .nav_li {
+      @include breakpoint(tablet) {
+        width: 100%;
+      }
+      .nav_a {
+        padding: 20px 15px;
+        display: inline-block;
+        font-weight: bold;
+        @include breakpoint(tablet) {
+          display: block;
+          padding: 20px 5px;
+        }
+        &:hover {
+          background-color: blanchedalmond;
+          color: cadetblue;
+        }
+      }
+    }
+  }
+}
